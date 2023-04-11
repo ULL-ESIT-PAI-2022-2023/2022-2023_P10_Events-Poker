@@ -1,4 +1,4 @@
-# Práctica 13. Programación Gráfica Orientada a Eventos. Juego de Poker.
+# Práctica 10. Programación Gráfica Orientada a Eventos. Juego de Poker.
 ### Factor de ponderación: 9 
 
 ### Objetivos
