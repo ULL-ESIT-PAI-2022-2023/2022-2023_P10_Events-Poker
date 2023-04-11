@@ -74,8 +74,8 @@ Realice, como siempre, un diseño incremental del programa comprobando cada una 
 desarrollo TDD.
 
 ### El juego del Poker
-En esta práctica se propone desarrollar una aplicación web `poker.ts`.
-La aplicación se diseñará utilizando clases encapsuladas en módulos ES6 que modelen el juego e implementen el patrón MVC.
+En esta práctica se propone desarrollar una aplicación web `poker.ts`
+La aplicación se diseñará utilizando clases encapsuladas en diferentes módulos.
 
 Tendrá que representar 
 [cartas de la baraja francesa](https://en.wikipedia.org/wiki/Standard_52-card_deck), mazos de cartas, manos y jugadas del Póquer.
@@ -89,7 +89,7 @@ que se usen en el código TypeScript utilicen la terminología en inglés para l
 modelar en su programa: cartas (cards), mazo de cartas (deck), etc.
 
 ### La clase *Card*
-Se propone desarrollar en el módulo `card.js` una clase `Card` que permita representar cartas de la barja francesa.
+Se propone desarrollar en el módulo `card.ts` una clase `Card` que permita representar cartas de la barja francesa.
 La baraja francesa está dividida en cuatro palos (en inglés: *suit*), dos de color rojo y dos de color negro:
 
 * ♠ Spades (picas).
@@ -103,18 +103,15 @@ Las cartas con letras (figuras), se llaman Jack (J), Queen (Q), King (K) y Ace (
 Dependiendo del juego, un As puede ser más alto que el Rey o más bajo que 2.
 
 Si se quiere definir una clase para representar una carta de juego, 
-es obvio cuáles deben ser los atributos imprescindibles: valor, palo y la imagen asociada con la carta.
+es obvio cuáles deben ser los atributos mínimos imprescindibles: valor, palo y la imagen asociada con la carta.
 Cualquier implementación que se elija para los atributos ha de permitir comparar cartas para determinar cuál tiene un valor o palo más alto.
 El directorio `img` de este proyecto contiene ficheros gráficos correspondientes a todas las cartas de la
 baraja francesa.
 
 Defina una clase `Card` para representar las cartas.
 Si no se especifica algo diferente, al crear un objeto de esta clase se crearía un 2 de tréboles.
-Para instanciar un objeto Carta se usaría un código como:
-```typescript
-const myCard = new Card(SUIT, RANK);
-```
-A efectos de depuración le resultará útil desarrollar un método `toString()` que permita imprimir un objeto `Card`.
+
+A efectos de depuración es posible que le resulte útil desarrollar un método `toString()` que permita imprimir en consola un objeto `Card`.
 Las cartas han de poder imprimirse de forma que sean legibles para un humano.
 Así en pantalla esperamos encontrar textos como:
 
@@ -225,7 +222,13 @@ de mayor valor para una mano y establezca un atributo de esa mano (valor de la m
 Por ejemplo, una mano de 5 cartas podría contener un trío y un par; debería ser etiquetada como "Three of a
 kind" (trío) puesto que esa es la jugada de mayor valor.
 
-### Interfaz gráfica del programa. 
+### Interfaz gráfica del programa
+
+En toda la lógica expuesta anteriormente para la representación de elementos del juego del poker se ha omitido
+la representación gráfica de los diferentes elementos.
+Ha de añadir la lógica correspondiente para mostrar gráficamente en el navegador esos elementos: cartas,
+manos, etc.
+
 Desarrolle una página `poker.html` que muestre el viewport de su navegador dividido 
 en dos mitades, superior e inferior. 
 En cada una de las dos mitades (dos filas) ha de ubicar espacio para mostrar 5 cartas de 
